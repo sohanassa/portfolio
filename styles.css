@@ -967,7 +967,7 @@ section h2::before { content: '↘'; display: block; margin-bottom: 18px; color:
 [data-theme='dark'] .hero { background: #080909; }
 [data-theme='dark'] .experience { background: #294254; }
 [data-theme='dark'] .projects { background: #8f3c2e; }
-[data-theme='dark'] .skills { background: #6f579b; }
+[data-theme='dark'] .skills { background: #718d35; }
 [data-theme='dark'] .volunteering-item, [data-theme='dark'] .education-item, [data-theme='dark'] .project-card { background: #202321; }
 [data-theme='dark'] .project-card:nth-child(2) { background: #8064af; color: #f4f1eb; }
 [data-theme='dark'] .project-card:nth-child(3) { background: #567994; }
@@ -995,4 +995,26 @@ section h2::before { content: '↘'; display: block; margin-bottom: 18px; color:
 
 @media (max-width: 680px) {
     .nav-links { gap: 10px; }
+}
+
+/* Stable header controls and section color treatment */
+.navbar .container { position: relative; }
+.site-controls { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); margin: 0; }
+.nav-links { margin-left: auto; }
+.skills { background: var(--green); }
+.timeline-content h3, .volunteering-item h3 { color: var(--ink); }
+.education-item:nth-child(2) { background: #d9c8fa; }
+.education-item:nth-child(3) { background: #f4b08d; }
+[data-theme='dark'] .timeline-content h3, [data-theme='dark'] .volunteering-item h3 { color: #ffffff; }
+[data-theme='dark'] .education-item:nth-child(2) { background: #66508b; }
+[data-theme='dark'] .education-item:nth-child(3) { background: #95533d; }
+
+@media (max-width: 900px) {
+    .nav-links { margin-left: 0; }
+}
+
+@media (max-width: 680px) {
+    .site-controls { position: static; transform: none; margin: 0 12px 0 auto; }
+    .navbar .container { width: calc(100% - 32px); }
+    .nav-links { margin-left: 0; }
 }
