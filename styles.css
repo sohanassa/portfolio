@@ -20,7 +20,8 @@
         --paper: #f4f1eb;
         --muted: #777b7b;
         --line: #d2cec4;
-        --lime: #d7f34a;
+        --lime: #b99bea;
+        --green: #c8ed62;
         --coral: #ff694d;
         --blue: #a8d5ff;
         --white: #fffdf8;
@@ -966,9 +967,9 @@ section h2::before { content: '↘'; display: block; margin-bottom: 18px; color:
 [data-theme='dark'] .hero { background: #080909; }
 [data-theme='dark'] .experience { background: #294254; }
 [data-theme='dark'] .projects { background: #8f3c2e; }
-[data-theme='dark'] .skills { background: #8d9e28; }
+[data-theme='dark'] .skills { background: #6f579b; }
 [data-theme='dark'] .volunteering-item, [data-theme='dark'] .education-item, [data-theme='dark'] .project-card { background: #202321; }
-[data-theme='dark'] .project-card:nth-child(2) { background: #9eae2f; color: #151719; }
+[data-theme='dark'] .project-card:nth-child(2) { background: #8064af; color: #f4f1eb; }
 [data-theme='dark'] .project-card:nth-child(3) { background: #567994; }
 [data-theme='dark'] .timeline-content p:last-child { color: #e2e2d9; }
 [data-theme='dark'] .contact-link:hover { background: var(--ink); color: var(--paper); }
@@ -978,4 +979,20 @@ section h2::before { content: '↘'; display: block; margin-bottom: 18px; color:
     .language-button { min-width: 28px; padding: 7px 4px; }
     .theme-toggle { width: 28px; height: 28px; }
     .navbar .container { width: calc(100% - 32px); }
+}
+
+/* Final palette and contrast adjustments */
+.nav-links { gap: 30px; }
+.education-item:first-child { background: var(--green); }
+[data-theme='dark'] .hero h1, [data-theme='dark'] .hero p { color: #f4f1eb; }
+[data-theme='dark'] .languages .language-item .level { color: #d7c2ff; }
+[data-theme='dark'] .languages .proficiency-fill { background: #d7c2ff; }
+[data-theme='dark'] .project-card:nth-child(2) .project-link { color: #fffdf8; }
+
+@media (max-width: 900px) {
+    .nav-links { gap: 18px; }
+}
+
+@media (max-width: 680px) {
+    .nav-links { gap: 10px; }
 }
