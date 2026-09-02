@@ -45,28 +45,66 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Add active class to nav links on scroll
+// Keep the active link tied to the section nearest the viewport center.
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.nav-links a');
 
-window.addEventListener('scroll', () => {
-    let current = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - 200) {
-            current = section.getAttribute('id');
-        }
+function updateActiveSection() {
+    const viewportCenter = window.innerHeight / 2;
+    const visibleSections = [...sections].filter(section => section.getBoundingClientRect().top <= viewportCenter);
+    const closestSection = visibleSections[visibleSections.length - 1] || sections[0];
+
+    navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${closestSection.id}`));
+}
+
+window.addEventListener('scroll', updateActiveSection, { passive: true });
+window.addEventListener('scrollend', updateActiveSection);
+window.addEventListener('resize', updateActiveSection);
+updateActiveSection();
+
+const translations = {
+    el: {
+        'Portfolio': 'Πορτφόλιο', Home: 'Αρχική', About: 'Σχετικά', Experience: 'Εμπειρία', Projects: 'Έργα', Education: 'Εκπαίδευση', Languages: 'Γλώσσες', Skills: 'Δεξιότητες', Volunteering: 'Εθελοντισμός', Contact: 'Επικοινωνία',
+        "Hello, I'm Sohaib Nassar": 'Γεια, είμαι ο Sohaib Nassar', 'Automation Engineer | AI Engineer | Backend Developer': 'Μηχανικός Αυτοματισμού | Μηχανικός AI | Backend Developer', 'Download Resume': 'Λήψη Βιογραφικού', 'About Me': 'Σχετικά με εμένα', 'Recent Projects': 'Πρόσφατα έργα', 'Get In Touch': 'Επικοινωνήστε μαζί μου'
+    },
+    ar: {
+        'Portfolio': 'الملف الشخصي', Home: 'الرئيسية', About: 'نبذة عني', Experience: 'الخبرة', Projects: 'المشاريع', Education: 'التعليم', Languages: 'اللغات', Skills: 'المهارات', Volunteering: 'التطوع', Contact: 'تواصل',
+        "Hello, I'm Sohaib Nassar": 'مرحباً، أنا صهيب نصار', 'Automation Engineer | AI Engineer | Backend Developer': 'مهندس أتمتة | مهندس ذكاء اصطناعي | مطور Backend', 'Download Resume': 'تحميل السيرة الذاتية', 'About Me': 'نبذة عني', 'Recent Projects': 'أحدث المشاريع', 'Get In Touch': 'تواصل معي'
+    }
+};
+
+function setLanguage(language) {
+    document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.lang = language;
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const sourceText = element.dataset.i18n;
+        element.textContent = translations[language]?.[sourceText] || sourceText;
     });
-    
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
+    document.querySelectorAll('.language-button').forEach(button => {
+        const isActive = button.dataset.language === language;
+        button.classList.toggle('active', isActive);
+        button.setAttribute('aria-pressed', isActive);
     });
+    localStorage.setItem('portfolio-language', language);
+}
+
+document.querySelectorAll('.language-button').forEach(button => {
+    button.addEventListener('click', () => setLanguage(button.dataset.language));
 });
+
+const themeToggle = document.getElementById('themeToggle');
+function setTheme(theme) {
+    document.documentElement.dataset.theme = theme;
+    themeToggle?.setAttribute('aria-pressed', theme === 'dark');
+    localStorage.setItem('portfolio-theme', theme);
+}
+
+themeToggle?.addEventListener('click', () => {
+    setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
+});
+
+setLanguage(localStorage.getItem('portfolio-language') || 'en');
+setTheme(localStorage.getItem('portfolio-theme') || 'light');
 
 // Animate elements on scroll
 const observerOptions = {

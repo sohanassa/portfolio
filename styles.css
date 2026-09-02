@@ -935,3 +935,47 @@ section h2::before { content: '↘'; display: block; margin-bottom: 18px; color:
     .skills-grid { grid-template-columns: repeat(2,1fr); gap: 28px 14px; }
     .skill-item h3 { min-height: auto; }
 }
+
+/* Requested controls and section refinements */
+.site-controls { display: flex; align-items: center; gap: 10px; margin-left: auto; margin-right: 28px; }
+.language-toggle { display: flex; border: 1px solid var(--ink); }
+.language-button, .theme-toggle { border: 0; background: transparent; color: var(--ink); cursor: pointer; font-family: 'DM Mono', monospace; font-size: .65rem; }
+.language-button { min-width: 32px; padding: 7px 6px; }
+.language-button.active { background: var(--ink); color: var(--paper); }
+.theme-toggle { width: 30px; height: 30px; border: 1px solid var(--ink); font-size: 1rem; line-height: 1; }
+.theme-toggle:hover { background: var(--ink); color: var(--lime); }
+.experience-timeline::before { display: none; }
+.volunteering-items { max-width: 760px; margin: 0 auto; grid-template-columns: 1fr; }
+.volunteering-item { min-height: 0; }
+.contact { text-align: center; }
+.contact > .container > p { margin: -25px auto 38px; }
+.contact-links { justify-content: center; }
+.languages .language-item h3 { color: var(--paper); }
+.languages .language-item .details { color: var(--paper) !important; }
+
+[data-theme='dark'] {
+    --ink: #f4f1eb;
+    --paper: #151719;
+    --muted: #aeb2ab;
+    --line: #3b3f3e;
+    --white: #202321;
+}
+[data-theme='dark'] body::before { opacity: .14; }
+[data-theme='dark'] .navbar { background: rgba(21,23,25,.9); }
+[data-theme='dark'] .nav-links { background: var(--paper); }
+[data-theme='dark'] .hero { background: #080909; }
+[data-theme='dark'] .experience { background: #294254; }
+[data-theme='dark'] .projects { background: #8f3c2e; }
+[data-theme='dark'] .skills { background: #8d9e28; }
+[data-theme='dark'] .volunteering-item, [data-theme='dark'] .education-item, [data-theme='dark'] .project-card { background: #202321; }
+[data-theme='dark'] .project-card:nth-child(2) { background: #9eae2f; color: #151719; }
+[data-theme='dark'] .project-card:nth-child(3) { background: #567994; }
+[data-theme='dark'] .timeline-content p:last-child { color: #e2e2d9; }
+[data-theme='dark'] .contact-link:hover { background: var(--ink); color: var(--paper); }
+
+@media (max-width: 680px) {
+    .site-controls { gap: 6px; margin-right: 12px; }
+    .language-button { min-width: 28px; padding: 7px 4px; }
+    .theme-toggle { width: 28px; height: 28px; }
+    .navbar .container { width: calc(100% - 32px); }
+}

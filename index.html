@@ -16,21 +16,29 @@
     <nav class="navbar">
         <div class="container">
             <div class="logo">Portfolio</div>
+            <div class="site-controls" aria-label="Site controls">
+                <div class="language-toggle" role="group" aria-label="Language">
+                    <button type="button" class="language-button active" data-language="en" aria-label="English">EN</button>
+                    <button type="button" class="language-button" data-language="el" aria-label="Greek">ΕΛ</button>
+                    <button type="button" class="language-button" data-language="ar" aria-label="Arabic">ع</button>
+                </div>
+                <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" aria-pressed="false">◐</button>
+            </div>
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#languages">Languages</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#volunteering">Volunteering</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" data-i18n="Home">Home</a></li>
+                <li><a href="#about" data-i18n="About">About</a></li>
+                <li><a href="#experience" data-i18n="Experience">Experience</a></li>
+                <li><a href="#projects" data-i18n="Projects">Projects</a></li>
+                <li><a href="#education" data-i18n="Education">Education</a></li>
+                <li><a href="#languages" data-i18n="Languages">Languages</a></li>
+                <li><a href="#skills" data-i18n="Skills">Skills</a></li>
+                <li><a href="#volunteering" data-i18n="Volunteering">Volunteering</a></li>
+                <li><a href="#contact" data-i18n="Contact">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -38,10 +46,10 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
-            <h1>Hello, I'm Sohaib Nassar</h1>
-            <p>Automation Engineer | AI Engineer | Backend Developer</p>
+            <h1 data-i18n="Hello, I'm Sohaib Nassar">Hello, I'm Sohaib Nassar</h1>
+            <p data-i18n="Automation Engineer | AI Engineer | Backend Developer">Automation Engineer | AI Engineer | Backend Developer</p>
             <div class="hero-buttons">
-                <a href="resume.pdf" download class="cta-button">Download Resume</a>
+                <a href="resume.pdf" download class="cta-button" data-i18n="Download Resume">Download Resume</a>
             </div>
         </div>
     </section>
@@ -49,7 +57,7 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2>About Me</h2>
+            <h2 data-i18n="About Me">About Me</h2>
             <p>
                I’m a Software Engineer specializing in backend development and test automation, with a passion for building reliable and efficient software. I’m particularly interested in AI systems, RAG, LLM applications, and prompt engineering, and I enjoy exploring how emerging technologies can solve complex problems. 
             </p>
@@ -62,7 +70,7 @@
     <!-- Experience Section -->
     <section id="experience" class="experience">
         <div class="container">
-            <h2>Experience</h2>
+            <h2 data-i18n="Experience">Experience</h2>
             <div class="experience-timeline">
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
@@ -82,7 +90,7 @@
     <!-- Volunteering Section -->
     <section id="volunteering" class="volunteering">
         <div class="container">
-            <h2>Volunteering</h2>
+            <h2 data-i18n="Volunteering">Volunteering</h2>
             <div class="volunteering-items">
                 <div class="volunteering-item">
                     <h3>ESN Nicosia Vice National Representative</h3>
@@ -99,7 +107,7 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2>Recent Projects</h2>
+            <h2 data-i18n="Recent Projects">Recent Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <h3>Thesis: Course Scheduling Tool</h3>
@@ -130,7 +138,7 @@
     <!-- Education Section -->
     <section id="education" class="education">
         <div class="container">
-            <h2>Education</h2>
+            <h2 data-i18n="Education">Education</h2>
             <div class="education-items">
                 <div class="education-item">
                     <h3>Bachelor of Computer Science</h3>
@@ -161,7 +169,7 @@
     <!-- Languages Section -->
     <section id="languages" class="languages">
         <div class="container">
-            <h2>Languages</h2>
+            <h2 data-i18n="Languages">Languages</h2>
             <div class="languages-grid">
                 <div class="language-item">
                     <h3>English</h3>
@@ -192,7 +200,7 @@
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
-            <h2>Skills</h2>
+            <h2 data-i18n="Skills">Skills</h2>
             <div class="skills-grid">
                 <div class="skill-item">
                     <h3>Backend & Automation</h3>
@@ -258,7 +266,7 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Get In Touch</h2>
+            <h2 data-i18n="Get In Touch">Get In Touch</h2>
             <p>Feel free to reach out if you'd like to collaborate or have any questions!</p>
             <div class="contact-links">
                 <a href="mailto:sohaib.a.nassar@gmail.com" class="contact-link">Email</a>
