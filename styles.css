@@ -1022,7 +1022,8 @@ section h2::before { content: '↘'; display: block; margin-bottom: 18px; color:
 
 /* High-contrast dark sections */
 [data-theme='dark'] .skills { color: #ffffff; }
-[data-theme='dark'] .skills h2, [data-theme='dark'] .skills .skill-item h3 { color: #ffffff; }
+[data-theme='dark'] .skills h2 { color: #ffffff; }
+[data-theme='dark'] .skills .skill-item h3 { color: #d7c2ff; }
 [data-theme='dark'] .skills .skill-item li { color: #f0f3d9; border-color: rgba(255,255,255,.32); }
 [data-theme='dark'] .skills .skill-item li::before { color: #e4ff85; }
 [data-theme='dark'] .projects h2 { color: #ffffff; }
@@ -1031,5 +1032,17 @@ section h2::before { content: '↘'; display: block; margin-bottom: 18px; color:
 [data-theme='dark'] .projects .project-card:nth-child(2) p { color: #fff8ff; }
 [data-theme='dark'] .education h2 { color: #ffffff; }
 [data-theme='dark'] .education-item h3 { color: #17191d; }
-[data-theme='dark'] .education-item p, [data-theme='dark'] .education-item .details { color: #30283a !important; }
+[data-theme='dark'] .education-item:first-child { background: #718d35; }
+[data-theme='dark'] .education-item p:not(.institution):not(.details):not(.grade) { color: #ffffff !important; }
 [data-theme='dark'] .education-item .institution { color: #5b2f7c !important; }
+
+.skills .skill-item h3 { color: var(--coral); }
+.skills .skill-item:nth-child(2) h3 { color: #7046a8; }
+.skills .skill-item:nth-child(3) h3 { color: #365f8a; }
+.skills .skill-item:nth-child(4) h3 { color: #a44730; }
+.skills .skill-item:nth-child(5) h3 { color: #5c3c7b; }
+
+[data-theme='dark'] .skills .skill-item:nth-child(2) h3,
+[data-theme='dark'] .skills .skill-item:nth-child(5) h3 { color: #e0cfff; }
+[data-theme='dark'] .skills .skill-item:nth-child(3) h3 { color: #b9dcff; }
+[data-theme='dark'] .skills .skill-item:nth-child(4) h3 { color: #ffc0ae; }
