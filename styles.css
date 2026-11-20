@@ -131,7 +131,7 @@
 
     .projects { background: var(--coral); }
     .projects-grid { display: grid; grid-template-columns: minmax(0, 760px); justify-content: center; background: transparent; border: 0; }
-    .project-card { min-width: 0; min-height: 390px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 28px; border: 0; border-radius: 0; background: var(--coral); text-align: center; transition: transform .25s ease, background .25s ease; }
+    .project-card { min-width: 0; min-height: 390px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 28px; border: 1px solid var(--ink); border-radius: 0; background: var(--paper); text-align: center; transition: transform .25s ease, background .25s ease; }
     .project-card:nth-child(2) { background: var(--lime); }
     .project-card:nth-child(3) { background: var(--blue); }
     .project-card:hover { transform: translateY(-10px); }
@@ -890,7 +890,7 @@ section h2::before { content: '↘'; display: block; margin-bottom: 18px; color:
 .date, .details { color: var(--muted) !important; font-family: 'DM Mono', monospace; font-size: .7rem !important; }
 .projects { background: var(--coral); }
 .projects-grid { grid-template-columns: minmax(0,760px); justify-content: center; background: transparent; border: 0; }
-.project-card { min-width: 0; min-height: 390px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 28px; border: 0; border-radius: 0; background: var(--coral); text-align: center; }
+.project-card { min-width: 0; min-height: 390px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 28px; border: 1px solid var(--ink); border-radius: 0; background: var(--paper); text-align: center; }
 .project-card:nth-child(2) { background: var(--green); }
 .project-card:nth-child(3) { background: var(--blue); }
 .project-card:hover { transform: translateY(-10px); }
@@ -973,7 +973,8 @@ section h2::before { content: '↘'; display: block; margin-bottom: 18px; color:
 [data-theme='dark'] .projects { background: #8f3c2e; }
 [data-theme='dark'] .skills { background: #718d35; }
 [data-theme='dark'] .volunteering-item, [data-theme='dark'] .education-item { background: #202321; }
-[data-theme='dark'] .projects .project-card { background: var(--coral); }
+[data-theme='dark'] .projects .project-card { background: #202321; border-color: var(--paper); color: var(--paper); }
+[data-theme='dark'] .projects .project-link { color: var(--lime); }
 [data-theme='dark'] .project-card:nth-child(2) { background: #8064af; color: #f4f1eb; }
 [data-theme='dark'] .project-card:nth-child(3) { background: #567994; }
 [data-theme='dark'] .timeline-content p:last-child { color: #e2e2d9; }
